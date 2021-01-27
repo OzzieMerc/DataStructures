@@ -7,8 +7,10 @@
 */
 
 #include "UnitTests/UnitTest.h"
+
 #include "UnitTests/AVLTreeTest.h"
 #include "UnitTests/BinarySearchTreeTest.h"
+#include "UnitTests/DynamicArrayTest.h"
 
 /*
 	DESCRIPTION: Entry-point for the program.
@@ -21,6 +23,7 @@ int main(int _argCount, char** _argVals)
 
 	UT::TestAVLTree();
 	UT::TestBinarySearchTree();
+	UT::TestDynamicArray();
 
 	UT::End();
 
