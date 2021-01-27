@@ -7,6 +7,7 @@
 */
 
 #include "UnitTests/UnitTest.h"
+#include "UnitTests/AVLTreeTest.h"
 #include "UnitTests/BinarySearchTreeTest.h"
 
 /*
@@ -18,6 +19,7 @@ int main(int _argCount, char** _argVals)
 {
 	UT::Start();
 
+	UT::TestAVLTree();
 	UT::TestBinarySearchTree();
 
 	UT::End();
