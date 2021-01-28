@@ -30,20 +30,101 @@ private:
 public:
 	// FUNCTIONS
 
+	/*
+		DESCRIPTION: Constructs an empty array.
+	*/
 	DynamicArray();
+
+	/*
+		DESCRIPTION: Deep copies the provided array.
+		PARAMETERS:
+			const DynamicArray<Type>& _array, the array to copy.
+	*/
 	DynamicArray(const DynamicArray<Type>& _array);
+
+	/*
+		DESCRIPTION: Deallocates the array.
+	*/
 	~DynamicArray();
+
+	/*
+		DESCRIPTION: Deep copies the provided array.
+		PARAMETERS:
+			const DynamicArray<Type>& _array, the array to copy.
+	*/
 	DynamicArray<Type>& operator=(const DynamicArray<Type>& _array);
+
+	/*
+		DESCRIPTION: Returns the item at an index.
+		PARAMETERS:
+			unsigned int _index, the index of the item.
+	*/
 	inline Type& operator[](unsigned int _index);
+
+	/*
+		DESCRIPTION: Returns the item at an index.
+		PARAMETERS:
+			unsigned int _index, the index of the item.
+	*/
 	inline const Type& operator[](unsigned int _index) const;
+
+	/*
+		DESCRIPTION: Adds an item to the end of the array.
+		PARAMETERS:
+			const Type& _data, the item to add.
+	*/
 	void Append(const Type& _data);
+
+	/*
+		DESCRIPTION: Inserts an item at an index of the array.
+		PARAMETERS:
+			unsigned int _index, the index where the item is to be inserted.
+			const Type& _data, the item to insert.
+	*/
 	void Insert(unsigned int _index, const Type& _data);
+
+	/*
+		DESCRIPTION: Removes the item at an index of the array.
+		PARAMETERS:
+			unsigned int _index, the index where the item is to remove.
+	*/
 	void Remove(unsigned int _index);
+
+	/*
+		DESCRIPTION: Returns if an item is in the array.
+		PARAMETERS:
+			const Type& _data, the item to find.
+		RETURNS: bool - If the item is in the array.
+	*/
 	bool Find(const Type& _data);
+
+	/*
+		DESCRIPTION: Removes all the items in the array.
+	*/
 	void Clear();
+
+	/*
+		DESCRIPTION: Returns the number of items stored in the array.
+		RETURNS: unsigned int - The size of the array.
+	*/
 	inline unsigned int Size() const;
+
+	/*
+		DESCRIPTION: Returns the number of items the array can store before needing to resize.
+		RETURNS: unsigned int - The capacity of the array.
+	*/
 	inline unsigned int Capacity() const;
+
+	/*
+		DESCRIPTION: Reserves the amount memory needed for the desired capacity. 
+		PARAMETERS:
+			unsigned int _newCapacity, the desired capacity.
+	*/
 	void Reserve(unsigned int _newCapacity);
+
+	/*
+		DESCRIPTION: Reallocates the space used by the array so that it matches the array size.
+	*/
 	inline void ShrinkToFit();
 };
 
