@@ -2,7 +2,7 @@
 	FILE: AVLTree.h
 	AUTHOR: Ozzie Mercado
 	CREATED: January 26, 2021
-	MODIFIED: January 26, 2021
+	MODIFIED: January 29, 2021
 	DESCRIPTION: A templated AVL Tree data structure. The benefits of the AVL are:
 		- Insert(): On average O(log N), worst case O(log N).
 		- Remove(): On average O(log N), worst case O(log N).
@@ -40,7 +40,7 @@ private:
 
 	Node* m_root; // The head of the tree.
 	std::function<bool(const Type&, const Type&)> m_isLesser; // Function for determining lesser values.
-	std::function<bool(const Type&, const Type&)> m_IsGreater; // Function for determining greater values.
+	std::function<bool(const Type&, const Type&)> m_isGreater; // Function for determining greater values.
 
 	// FUNCTIONS
 
@@ -234,7 +234,7 @@ template<typename Type>
 AVLTree<Type>::AVLTree(std::function<bool(const Type&, const Type&)> _isLesser, std::function<bool(const Type&, const Type&)> _isGreater) :
 	m_root(nullptr),
 	m_isLesser(_isLesser),
-	m_IsGreater(_isGreater)
+	m_isGreater(_isGreater)
 {
 }
 
@@ -362,7 +362,7 @@ bool AVLTree<Type>::Remove(const Type& _data, Node* _node, Node* _parentNode)
 
 		return result;
 	}
-	else if (m_IsGreater(_data, _node->data))
+	else if (m_isGreater(_data, _node->data))
 	{
 		Node* rightNode = _node->right;
 
@@ -463,7 +463,7 @@ bool AVLTree<Type>::Find(const Type& _data, Node* _node) const
 
 	if (m_isLesser(_data, _node->data))
 		return Find(_data, _node->left);
-	else if (m_IsGreater(_data, _node->data))
+	else if (m_isGreater(_data, _node->data))
 		return Find(_data, _node->right);
 
 	return true;

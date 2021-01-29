@@ -2,7 +2,7 @@
 	FILE: BinarySearchTree.h
 	AUTHOR: Ozzie Mercado
 	CREATED: December 19, 2020
-	MODIFIED: January 26, 2021
+	MODIFIED: January 29, 2021
 	DESCRIPTION: A templated Binary Search Tree (BST) data structure. The benefits of the BST are:
 		- Insert(): On average O(log N), worst case O(N).
 		- Remove(): On average O(log N), worst case O(N).
@@ -40,7 +40,7 @@ private:
 
 	Node* m_root; // The head of the tree.
 	std::function<bool(const Type&, const Type&)> m_isLesser; // Function for determining lesser values.
-	std::function<bool(const Type&, const Type&)> m_IsGreater; // Function for determining greater values.
+	std::function<bool(const Type&, const Type&)> m_isGreater; // Function for determining greater values.
 
 	// FUNCTIONS
 
@@ -193,7 +193,7 @@ template<typename Type>
 BinarySearchTree<Type>::BinarySearchTree(std::function<bool(const Type&, const Type&)> _isLesser, std::function<bool(const Type&, const Type&)> _isGreater) :
 	m_root(nullptr),
 	m_isLesser(_isLesser),
-	m_IsGreater(_isGreater)
+	m_isGreater(_isGreater)
 {
 }
 
@@ -314,7 +314,7 @@ bool BinarySearchTree<Type>::Remove(const Type& _data, Node* _node)
 		// The node to Remove may be further left.
 		return Remove(_data, leftNode);
 	}
-	else if (m_IsGreater(_data, _node->data))
+	else if (m_isGreater(_data, _node->data))
 	{
 		Node* rightNode = _node->right;
 
@@ -405,7 +405,7 @@ bool BinarySearchTree<Type>::Find(const Type& _data, Node* _node) const
 
 	if (m_isLesser(_data, _node->data))
 		return Find(_data, _node->left);
-	else if (m_IsGreater(_data, _node->data))
+	else if (m_isGreater(_data, _node->data))
 		return Find(_data, _node->right);
 
 	return true;
