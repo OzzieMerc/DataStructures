@@ -2,7 +2,7 @@
 	FILE: main.cpp
 	AUTHOR: Ozzie Mercado
 	CREATED: January 26, 2021
-	MODIFIED: January 26, 2021
+	MODIFIED: January 29, 2021
 	DESCRIPTION: This is the entry point for the unit testing of all data structures developed.
 */
 
@@ -10,6 +10,7 @@
 
 #include "UnitTests/AVLTreeTest.h"
 #include "UnitTests/BinarySearchTreeTest.h"
+#include "UnitTests/DoublyLinkedListTest.h"
 #include "UnitTests/DynamicArrayTest.h"
 
 /*
@@ -23,6 +24,7 @@ int main(int _argCount, char** _argVals)
 
 	UT::TestAVLTree();
 	UT::TestBinarySearchTree();
+	UT::TestDoublyLinkedList();
 	UT::TestDynamicArray();
 
 	UT::End();
