@@ -12,6 +12,7 @@
 #include "UnitTests/BinarySearchTreeTest.h"
 #include "UnitTests/DoublyLinkedListTest.h"
 #include "UnitTests/DynamicArrayTest.h"
+#include "UnitTests/SinglyLinkedListTest.h"
 
 /*
 	DESCRIPTION: Entry-point for the program.
@@ -26,6 +27,7 @@ int main(int _argCount, char** _argVals)
 	UT::TestBinarySearchTree();
 	UT::TestDoublyLinkedList();
 	UT::TestDynamicArray();
+	UT::TestSinglyLinkedList();
 
 	UT::End();
 
