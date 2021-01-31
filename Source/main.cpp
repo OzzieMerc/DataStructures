@@ -2,7 +2,7 @@
 	FILE: main.cpp
 	AUTHOR: Ozzie Mercado
 	CREATED: January 26, 2021
-	MODIFIED: January 29, 2021
+	MODIFIED: January 31, 2021
 	DESCRIPTION: This is the entry point for the unit testing of all data structures developed.
 */
 
@@ -13,6 +13,7 @@
 #include "UnitTests/DoublyLinkedListTest.h"
 #include "UnitTests/DynamicArrayTest.h"
 #include "UnitTests/SinglyLinkedListTest.h"
+#include "UnitTests/StackTest.h"
 
 /*
 	DESCRIPTION: Entry-point for the program.
@@ -28,6 +29,7 @@ int main(int _argCount, char** _argVals)
 	UT::TestDoublyLinkedList();
 	UT::TestDynamicArray();
 	UT::TestSinglyLinkedList();
+	UT::TestStack();
 
 	UT::End();
 
