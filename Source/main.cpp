@@ -8,6 +8,7 @@
 
 #include "UnitTests/UnitTest.h"
 
+// Data structure test includes.
 #include "UnitTests/AVLTreeTest.h"
 #include "UnitTests/BinarySearchTreeTest.h"
 #include "UnitTests/DoublyLinkedListTest.h"
@@ -15,6 +16,9 @@
 #include "UnitTests/SinglyLinkedListTest.h"
 #include "UnitTests/StackTest.h"
 #include "UnitTests/QueueTest.h"
+
+// Algorithm test includes.
+#include "UnitTests/SortingTest.h"
 
 /*
 	DESCRIPTION: Entry-point for the program.
@@ -25,6 +29,7 @@ int main(int _argCount, char** _argVals)
 {
 	UT::Start();
 
+	// Test Data Structures.
 	UT::TestAVLTree();
 	UT::TestBinarySearchTree();
 	UT::TestDoublyLinkedList();
@@ -32,6 +37,9 @@ int main(int _argCount, char** _argVals)
 	UT::TestSinglyLinkedList();
 	UT::TestStack();
 	UT::TestQueue();
+
+	// Test Algorithms.
+	UT::TestSorting();
 
 	UT::End();
 
