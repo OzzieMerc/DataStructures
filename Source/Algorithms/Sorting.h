@@ -76,4 +76,47 @@ namespace Sort
 	{
 		BubbleSort<Type>(_array, _arraySize, [](const int& _lhs, const int& _rhs) { return _lhs < _rhs; });
 	}
+
+	/*
+		DESCRIPTION: Sorts the array by visiting each item and sorting them amongst the other visited items.
+		PARAMETERS:
+			Type* _array, the array to sort.
+			unsigned int _arraySize, the number of items in the array.
+			std::function<bool(const Type&, const Type&)> _comparisionFunc, function to determine order.
+	*/
+	template<typename Type>
+	void InsertionSort(Type* _array, unsigned int _arraySize, std::function<bool(const Type&, const Type&)> _comparisionFunc)
+	{
+		for (unsigned int i = 1; i < _arraySize; ++i)
+		{
+			Type key = _array[i];
+
+			for (unsigned int j = i; j > 0 && _comparisionFunc(_array[j - 1], key); --j)
+				Swap<Type>(_array[j - 1], _array[j]);
+		}
+	}
+
+	/*
+		DESCRIPTION: Sorts the array by visiting each item and sorting them amongst the other visited items in ascending order.
+		PARAMETERS:
+			Type* _array, the array to sort.
+			unsigned int _arraySize, the number of items in the array.
+	*/
+	template<typename Type>
+	void InsertionSortAscending(Type* _array, unsigned int _arraySize)
+	{
+		InsertionSort<Type>(_array, _arraySize, [](const int& _lhs, const int& _rhs) { return _lhs > _rhs; });
+	}
+
+	/*
+		DESCRIPTION: Sorts the array by visiting each item and sorting them amongst the other visited items in descending order.
+		PARAMETERS:
+			Type* _array, the array to sort.
+			unsigned int _arraySize, the number of items in the array.
+	*/
+	template<typename Type>
+	void InsertionSortDescending(Type* _array, unsigned int _arraySize)
+	{
+		InsertionSort<Type>(_array, _arraySize, [](const int& _lhs, const int& _rhs) { return _lhs < _rhs; });
+	}
 }
